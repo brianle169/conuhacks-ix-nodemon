@@ -17,16 +17,8 @@ body{
     text-align: center;
     border: solid 1px black;
 }
-/* body{
-    min-height: 100vh;
+.podium-content {
+    flex-grow: 1;
+    overflow-y: auto;
+    max-height: calc(100vh - 100px); /* Adjust 100px based on title height */
 }
-#podium-table{
-    border: 1px solid black;
-    border-collapse: collapse;
-    width: 100%;
-    top: 0;
-    bottom: 0;
-}
-.podium-table-row{
-    border: 1px solid black;
-} */
