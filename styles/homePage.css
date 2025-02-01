@@ -1,0 +1,149 @@
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/* General Styles */
+:root {
+  --header-height: 100px;
+  --footer-height: 80px;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  min-height: 100vh;
+}
+
+/* Grid Container */
+.container {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+/* Header */
+.header {
+  background: rgb(246, 244, 241);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo-title {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding-left: 3rem;
+}
+
+.logo-title h1 {
+  font-size: 2rem;
+  color: black;
+  font-family: 'Times New Roman', serif;
+  margin: 0;
+}
+
+/* Main Container */
+.main-container {
+  display: grid;
+  grid-template-columns: 0 1fr;
+  transition: grid-template-columns 0.3s ease;
+  position: relative;
+  min-height: calc(100vh - var(--header-height) - var(--footer-height) - 4rem);
+  gap: 1rem;
+}
+
+/* Sidebar */
+.sidebar {
+  background-color: #333;
+  overflow-y: auto;
+  transition: 0.3s;
+  padding-top: 2rem;
+  border-radius: 8px;
+}
+
+.sidebar a {
+  padding: 1rem 2rem;
+  text-decoration: none;
+  font-size: 1.1rem;
+  color: white;
+  display: block;
+  transition: 0.2s;
+}
+
+.sidebar a:hover {
+  background-color: #575757;
+}
+
+/* Main Content */
+.main-content {
+  padding: 1rem;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Open/Close Button */
+.openbtn {
+  font-size: 1.5rem;
+  cursor: pointer;
+  background-color: bisque;
+  color: #333;
+  border: none;
+  padding: 0.5rem 1rem;
+  position: fixed;
+  top: 1.5rem;
+  left: 2rem;
+  z-index: 1001;
+  border-radius: 4px;
+  transition: 0.3s;
+}
+
+/* Footer */
+.footer {
+  background: black;
+  border-radius: 8px;
+  padding: 1rem;
+  color: white;
+  text-align: center;
+  position: sticky;
+  bottom: 0;
+  z-index: 1000;
+}
+
+/* Mobile Breakpoint */
+@media (max-width: 767px) {
+  .main-container {
+    min-height: calc(100vh - var(--header-height) - var(--footer-height) - 2rem);
+  }
+
+  .sidebar {
+    padding-top: 4rem;
+  }
+
+  .sidebar a {
+    font-size: 1rem;
+    padding: 0.8rem 1.5rem;
+  }
+
+  .openbtn {
+    top: 1rem;
+    left: 1rem;
+    padding: 0.5rem;
+  }
+
+  .main-content {
+    padding: 1rem;
+  }
+}
