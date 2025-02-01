@@ -22,3 +22,11 @@ body{
     overflow-y: auto;
     max-height: calc(100vh - 100px); /* Adjust 100px based on title height */
 }
+
+#player-ranking-list li{
+    border: 1px solid black;
+    border-radius: 1000px;
+    padding: 5px;
+    margin-bottom: 5px;
+    box-shadow: inset 0px 0px 10px;
+}
