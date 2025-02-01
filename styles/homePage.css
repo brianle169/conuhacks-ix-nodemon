@@ -1,14 +1,19 @@
+/********************
+  Global Reset & Variables
+********************/
 #root,
 #__next {
   isolation: isolate;
 }
 
-/* General Styles */
 :root {
   --header-height: 100px;
   --footer-height: 80px;
 }
 
+/********************
+  Base Styles
+********************/
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -17,7 +22,9 @@ body {
   min-height: 100vh;
 }
 
-/* Grid Container */
+/********************
+  Layout Containers
+********************/
 .container {
   display: grid;
   grid-template-rows: auto 1fr auto;
@@ -26,13 +33,24 @@ body {
   padding: 1rem;
 }
 
-/* Header */
+.main-container {
+  display: grid;
+  grid-template-columns: 0 1fr;
+  transition: grid-template-columns 0.3s ease;
+  position: relative;
+  min-height: calc(100vh - var(--header-height) - var(--footer-height) - 4rem);
+  gap: 1rem;
+}
+
+/********************
+  Header Component
+********************/
 .header {
   background: rgb(246, 244, 241);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem;
+  padding: 1rem 2rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
   position: sticky;
@@ -50,21 +68,49 @@ body {
 .logo-title h1 {
   font-size: 2rem;
   color: black;
-  font-family: "Times New Roman", serif;
+  font-family: 'Times New Roman', serif;
   margin: 0;
 }
 
-/* Main Container */
-.main-container {
-  display: grid;
-  grid-template-columns: 0 1fr;
-  transition: grid-template-columns 0.3s ease;
-  position: relative;
-  min-height: calc(100vh - var(--header-height) - var(--footer-height) - 4rem);
+.auth-buttons {
+  display: flex;
   gap: 1rem;
 }
 
-/* Sidebar */
+.btn {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.login-btn {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+.signup-btn {
+  background-color: #333;
+  color: white;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.login-btn:hover {
+  background-color: #e0e0e0;
+}
+
+.signup-btn:hover {
+  background-color: #444;
+}
+
+/********************
+  Sidebar & Navigation
+********************/
 .sidebar {
   background-color: #333;
   overflow-y: auto;
@@ -86,15 +132,6 @@ body {
   background-color: #575757;
 }
 
-/* Main Content */
-.main-content {
-  padding: 1rem;
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* Open/Close Button */
 .openbtn {
   font-size: 1.5rem;
   cursor: pointer;
@@ -110,7 +147,19 @@ body {
   transition: 0.3s;
 }
 
-/* Footer */
+/********************
+  Main Content
+********************/
+.main-content {
+  padding: 1rem;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/********************
+  Footer
+********************/
 .footer {
   background: black;
   border-radius: 8px;
@@ -122,12 +171,85 @@ body {
   z-index: 1000;
 }
 
-/* Mobile Breakpoint */
+/********************
+  Auth Modals & Forms
+********************/
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 90%;
+  max-width: 400px;
+  position: relative;
+  border-radius: 8px;
+}
+
+.close {
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  font-size: 28px;
+  color: #aaa;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: #000;
+}
+
+.auth-form {
+  display: none;
+}
+
+.auth-form.active {
+  display: block;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.auth-form button[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  background-color: #faf9f5;
+  color: black;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/********************
+  Responsive Design
+********************/
 @media (max-width: 767px) {
   .main-container {
-    min-height: calc(
-      100vh - var(--header-height) - var(--footer-height) - 2rem
-    );
+    min-height: calc(100vh - var(--header-height) - var(--footer-height) - 2rem);
   }
 
   .sidebar {
@@ -147,5 +269,33 @@ body {
 
   .main-content {
     padding: 1rem;
+  }
+
+  .header {
+    padding: 1rem;
+  }
+
+  .auth-buttons {
+    gap: 0.5rem;
+  }
+
+  .btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .logo-title h1 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .auth-buttons {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .btn {
+    padding: 0.4rem 0.8rem;
   }
 }
