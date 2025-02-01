@@ -1,0 +1,32 @@
+body{
+    margin: 0;
+}
+.podium-flex-container{
+    display: flex;
+    flex-direction: column;
+    background-color: blue;
+    height: 100vh;
+    margin: 0;
+}
+.podium-flex-container > div{
+    background-color: white;
+    margin: 10px;
+    padding: 20px;
+}
+.podium-title{
+    text-align: center;
+    border: solid 1px black;
+}
+/* body{
+    min-height: 100vh;
+}
+#podium-table{
+    border: 1px solid black;
+    border-collapse: collapse;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+}
+.podium-table-row{
+    border: 1px solid black;
+} */

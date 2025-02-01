@@ -6,4 +6,4 @@ Team Member:
 
 - Cong Minh Le
 - Levon Kahdejian
-- Tony Barrack
+- Tony Barrak
