@@ -1,0 +1,24 @@
+body{
+    margin: 0;
+}
+.podium-flex-container{
+    display: flex;
+    flex-direction: column;
+    background-color: blue;
+    height: 100vh;
+    margin: 0;
+}
+.podium-flex-container > div{
+    background-color: white;
+    margin: 10px;
+    padding: 20px;
+}
+.podium-title{
+    text-align: center;
+    border: solid 1px black;
+}
+.podium-content {
+    flex-grow: 1;
+    overflow-y: auto;
+    max-height: calc(100vh - 100px); /* Adjust 100px based on title height */
+}
