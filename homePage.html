@@ -1,76 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Katrivia</title>
+    <link rel="stylesheet" href="styles/homePage.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Katrivia</title>
-  <link rel="stylesheet" href="homePage.css">
-</head>
+  <body>
+    <div class="container">
+      <!-- Header -->
+      <header class="header">
+        <div class="logo-title">
+          <a href="homePage.html">
+            <img
+              src="images/logo.png"
+              alt="Katrivia"
+              width="150"
+              height="150"
+            />
+          </a>
+          <h1>Katrivia</h1>
+        </div>
+      </header>
 
-<body>
-  <div class="container">
-    <!-- Header -->
-    <header class="header">
-      <div class="logo-title">
-        <a href="homePage.html">
-          <img src="images/logo.png" alt="Katrivia" width="150" height="150">
-        </a>
-        <h1>Katrivia</h1>
-      </div>
-    </header>
+      <!-- Main Content -->
+      <main class="main-container">
+        <button class="openbtn" onclick="toggleSidebar()">☰</button>
 
-    <!-- Main Content -->
-    <main class="main-container">
-      <button class="openbtn" onclick="toggleSidebar()">☰</button>
+        <!-- Sidebar -->
+        <nav id="mySidebar" class="sidebar">
+          <a href="#">Home</a>
+          <a href="#">About</a>
+          <a href="#">Services</a>
+          <a href="#">Contact</a>
+        </nav>
 
-      <!-- Sidebar -->
-      <nav id="mySidebar" class="sidebar">
-        <a href="#">Home</a>
-        <a href="#">About</a>
-        <a href="#">Services</a>
-        <a href="#">Contact</a>
-      </nav>
+        <!-- Content Area -->
+        <div class="main-content">
+          <h2>Welcome to Katrivia</h2>
+          <p>Discover amazing content and services tailored just for you.</p>
+        </div>
+      </main>
 
-      <!-- Content Area -->
-      <div class="main-content">
-        <h2>Welcome to Katrivia</h2>
-        <p>Discover amazing content and services tailored just for you.</p>
-      </div>
-    </main>
+      <!-- Footer -->
+      <footer class="footer">
+        <p>© 2023 Katrivia. All rights reserved.</p>
+      </footer>
+    </div>
 
-    <!-- Footer -->
-    <footer class="footer">
-      <p>© 2023 Katrivia. All rights reserved.</p>
-    </footer>
-  </div>
+    <script>
+      function toggleSidebar() {
+        const sidebar = document.getElementById("mySidebar");
+        const mainContainer = document.querySelector(".main-container");
+        const isOpen = sidebar.classList.contains("open");
 
-  <script>
-    function toggleSidebar() {
-      const sidebar = document.getElementById("mySidebar");
-      const mainContainer = document.querySelector(".main-container");
-      const isOpen = sidebar.classList.contains("open");
-
-      if (isOpen) {
-        sidebar.classList.remove("open");
-        mainContainer.style.gridTemplateColumns = "0 1fr";
-      } else {
-        sidebar.classList.add("open");
-        mainContainer.style.gridTemplateColumns = "250px 1fr";
+        if (isOpen) {
+          sidebar.classList.remove("open");
+          mainContainer.style.gridTemplateColumns = "0 1fr";
+        } else {
+          sidebar.classList.add("open");
+          mainContainer.style.gridTemplateColumns = "250px 1fr";
+        }
       }
-    }
 
-    // Initialize header/footer heights
-    function updateHeights() {
-      const headerHeight = document.querySelector('.header').offsetHeight;
-      const footerHeight = document.querySelector('.footer').offsetHeight;
-      document.documentElement.style.setProperty('--header-height', `${headerHeight}px`);
-      document.documentElement.style.setProperty('--footer-height', `${footerHeight}px`);
-    }
+      // Initialize header/footer heights
+      function updateHeights() {
+        const headerHeight = document.querySelector(".header").offsetHeight;
+        const footerHeight = document.querySelector(".footer").offsetHeight;
+        document.documentElement.style.setProperty(
+          "--header-height",
+          `${headerHeight}px`
+        );
+        document.documentElement.style.setProperty(
+          "--footer-height",
+          `${footerHeight}px`
+        );
+      }
 
-    window.addEventListener('load', updateHeights);
-    window.addEventListener('resize', updateHeights);
-  </script>
-</body>
-
+      window.addEventListener("load", updateHeights);
+      window.addEventListener("resize", updateHeights);
+    </script>
+  </body>
 </html>

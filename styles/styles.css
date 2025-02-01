@@ -2,6 +2,7 @@
 
 html {
   font-size: 16px;
+  background-color: ;
 }
 
 /* 1. Use a more-intuitive box-sizing model */
@@ -22,9 +23,11 @@ body {
   line-height: 1.5;
   /* 4. Improve text rendering */
   -webkit-font-smoothing: antialiased;
+  font-family: Arial, sans-serif;
   height: 100vh;
   display: flex;
   flex-direction: column;
+  gap: 10px;
 }
 
 /* 5. Improve media defaults */
@@ -134,7 +137,8 @@ h6 {
   /* gap: 3rem; */
   .option {
     height: 35%;
-    min-width: 40%;
+    width: 40%;
+    overflow: hidden;
   }
 }
 
