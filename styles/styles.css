@@ -155,20 +155,28 @@ h6 {
   }
 }
 
-.option {
+.option,
+.restart-button {
   background-color: bisque;
   border-radius: 8px;
-  /* box-shadow: 5px 6px 14px -5px rgba(0, 0, 0, 0.75); */
 }
 
-.option:hover {
+.restart-button {
+  width: 15%;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.option:hover,
+.restart-button:hover {
   cursor: pointer;
   transform: translateY(-5%) translateX(-2%);
   box-shadow: 5px 6px 14px -5px rgba(0, 0, 0, 0.75);
   transition: all 0.1s;
 }
 
-.option:active {
+.option:active,
+.restart-button:active {
   transform: translateY(0%) translateX(0%);
   transition: all 0.1s;
   box-shadow: none;
