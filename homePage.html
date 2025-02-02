@@ -14,7 +14,7 @@
     <header class="header">
       <div class="logo-title">
         <a href="homePage.html">
-          <img src="images/logo.png" alt="Katrivia" width="150" height="150">
+          <img src="images/small logo.png " alt="Katrivia" width="70" height="70">
         </a>
         <h1>Katrivia</h1>
       </div>
@@ -30,7 +30,7 @@
 
       <!-- Sidebar -->
       <nav id="mySidebar" class="sidebar">
-        <a href="#">Home</a>
+        <a href="#" class="home-btn">Home</a>
         <a href="#">About</a>
         <a href="#">Services</a>
         <a href="#">Contact</a>
@@ -38,8 +38,22 @@
 
       <!-- Content Area -->
       <div class="main-content">
+        <h2 style="color: white;">.</h2>
+
         <h2>Welcome to Katrivia</h2>
-        <p>Discover amazing content and services tailored just for you.</p>
+        <p>Choose programming language you want to learn.</p>
+
+        <!-- Image Gallery -->
+        <div class="image-gallery">
+          <img src="images/java.png" alt="Java" width="200" height="2000">
+          <img src="images/python.png" alt="Image 2">
+          <img src="images/c.png" alt="Image 3">
+          <img src="images/cSharp.png" alt="Image 4">
+          <img src="images/c++.png" alt="Image 5">
+          <img src="images/javascript.png" alt="Image 6">
+          <img src="images/go.png" alt="Image 7">
+          <img src="images/php.png" alt="Image 8">
+        </div>
       </div>
     </main>
 
@@ -89,7 +103,7 @@
   </div>
 
   <script>
-    // Existing functions
+    // Sidebar Toggle Function
     function toggleSidebar() {
       const sidebar = document.getElementById("mySidebar");
       const mainContainer = document.querySelector(".main-container");
@@ -111,7 +125,7 @@
       document.documentElement.style.setProperty('--footer-height', `${footerHeight}px`);
     }
 
-    // New modal functionality
+    // Modal functionality
     const modal = document.getElementById('authModal');
     const loginBtn = document.querySelector('.login-btn');
     const signupBtn = document.querySelector('.signup-btn');

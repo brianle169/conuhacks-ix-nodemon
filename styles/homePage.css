@@ -7,7 +7,7 @@
 }
 
 :root {
-  --header-height: 100px;
+  --header-height: 40px;
   --footer-height: 80px;
 }
 
@@ -50,12 +50,13 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem 2rem;
+  padding: 0.5rem 1rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
-  position: sticky;
+  position: static;
   top: 0;
   z-index: 1000;
+  height: 60px;
 }
 
 .logo-title {
@@ -139,7 +140,7 @@ body {
   color: #333;
   border: none;
   padding: 0.5rem 1rem;
-  position: fixed;
+  position: absolute;
   top: 1.5rem;
   left: 2rem;
   z-index: 1001;
@@ -245,6 +246,26 @@ body {
 }
 
 /********************
+  Image Gallery
+********************/
+.image-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
+  justify-items: center;
+}
+
+.image-gallery img {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+}
+
+.image-gallery img:hover {
+  transform: scale(1.05);
+}
+
+/********************
   Responsive Design
 ********************/
 @media (max-width: 767px) {
@@ -298,4 +319,8 @@ body {
   .btn {
     padding: 0.4rem 0.8rem;
   }
+}
+
+.home-btn {
+  margin-top: 40px;
 }
