@@ -26,9 +26,10 @@ body{
 }
 
 #player-ranking-list{
-    padding: 0;
+    padding-left: 10px;
 }
-#player-ranking-list li{
+/* #player-ranking-list li{
+    list-style: none;
     border: 1px solid black;
     border-radius: 1000px;
     padding: 5px;
@@ -37,4 +38,26 @@ body{
 }
 #player-ranking-list li:hover{
     box-shadow: 0px 0px 10px rgb(124, 108, 86);
+} */
+
+/* #player-ranking-list li{
+    list-style: none;
+} */
+.score-data{
+    /* border: 10px groove rgb(224, 208, 186); */
+    border-collapse: collapse;
+    border-radius: 1000px;
+}
+.score-data td{
+    border: 10px groove rgb(224, 208, 186);
+    padding: 5px 20px;
+}
+
+.score-data tr:hover td{
+    border: 10px ridge rgb(224, 208, 186);
+}
+
+.podium-bottom-buttons{
+    bottom: 0;
+    height: 30px;
 }
