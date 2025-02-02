@@ -165,16 +165,26 @@ h6 {
 
 .option,
 .restart-button,
+.main-menu-button,
 .start-button {
   background-color: bisque;
   border-radius: 8px;
 }
 
 .restart-button,
+.main-menu-button,
 .start-button {
-  width: 15%;
   font-size: 1.2rem;
   font-weight: 700;
+}
+
+.start-button {
+  width: 15%;
+}
+
+.restart-button,
+.main-menu-button {
+  width: 30%;
 }
 
 .option {
@@ -183,6 +193,7 @@ h6 {
 
 .option:hover,
 .restart-button:hover,
+.main-menu-button:hover,
 .start-button:hover {
   cursor: pointer;
   transform: translateY(-5%) translateX(-2%);
@@ -192,6 +203,7 @@ h6 {
 
 .option:active,
 .restart-button:active,
+.main-menu-button:active,
 .start-button:active,
 .option:hover:disabled {
   transform: translateY(0%) translateX(0%);
@@ -203,6 +215,12 @@ h6 {
   border: 2px solid black;
   border-radius: 8px;
   color: black;
+}
+
+.rm-button-cont {
+  display: flex;
+  width: 70%;
+  justify-content: space-evenly;
 }
 
 h2 {

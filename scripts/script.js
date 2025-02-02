@@ -1409,11 +1409,19 @@ function loadQuestion() {
     optionPanel.style.display = "none"; // Hide buttons
     timeScoreDisplay.style.display = "none";
     // Add a restart button
+    let rmButtonCont = document.createElement("div");
+    rmButtonCont.classList.add("rm-button-cont");
     let restartButton = document.createElement("button");
     restartButton.textContent = "Restart";
     restartButton.classList.add("restart-button");
     restartButton.addEventListener("click", restart);
-    questionPanel.appendChild(restartButton);
+    let mainMenuButton = document.createElement("button");
+    mainMenuButton.textContent = "Main Menu";
+    mainMenuButton.classList.add("main-menu-button");
+    mainMenuButton.addEventListener("click", returnMainMenu);
+    rmButtonCont.appendChild(restartButton);
+    rmButtonCont.appendChild(mainMenuButton);
+    questionPanel.appendChild(rmButtonCont);
   }
 }
 
@@ -1424,6 +1432,8 @@ function restart(event) {
   optionPanel.style.display = "flex";
   event.target.style.display = "none";
   timeScoreDisplay.style.display = "flex";
+  let rmButtonCont = document.querySelector(".rm-button-cont");
+  rmButtonCont.style.display = "none";
   loadQuestion();
 }
 
@@ -1545,6 +1555,10 @@ function addPreGamePanel() {
 function getQueryParam(param) {
   let params = new URLSearchParams(window.location.search);
   return params.get(param);
+}
+
+function returnMainMenu() {
+  window.location.href = "homePage.html";
 }
 
 document.addEventListener("DOMContentLoaded", function () {
