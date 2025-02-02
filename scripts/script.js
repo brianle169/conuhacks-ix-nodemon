@@ -225,6 +225,7 @@ const optionPanel = document.querySelector(".option-panel");
 function resetButtons() {
   optionButtons.forEach((button) => {
     button.style.backgroundColor = "bisque";
+    button.removeAttribute("disabled");
   });
 }
 
@@ -301,12 +302,15 @@ function checkAnswer(selectedAnswer, button) {
   }
 
   currentQuestionIndex++;
-  setTimeout(loadQuestion, 1000); // Move to the next question after a short delay
+  setTimeout(loadQuestion, 500); // Move to the next question after a short delay
 }
 
 // Function to handle answer selection
 function handleAnswer(event) {
   const selectedAnswer = event.target.value; // "A", "B", "C", or "D"
+  optionButtons.forEach((button) => {
+    button["disabled"] = true;
+  });
   checkAnswer(selectedAnswer, event.target);
 }
 
@@ -315,5 +319,33 @@ optionButtons.forEach((button) => {
   button.addEventListener("click", handleAnswer);
 });
 
+function startGame() {
+  let pregamePanel = document.querySelector(".pregame-panel");
+  console.log("Hello");
+  pregamePanel.style.display = "none";
+  loadQuestion();
+}
+
+function addPreGamePanel() {
+  let pregamePanel = document.createElement("div");
+  pregamePanel.classList.add("pregame-panel");
+  let introduction = document.createElement("h2");
+  introduction.classList.add("introduction");
+  introduction.textContent = `Welcome to Katrivia! Let's test your knowledge on Java Programming Language!`;
+  let gameRule = document.createElement("p");
+  gameRule.textContent =
+    'There are total 20 questions, each question is worth 20 points, and you have 15 seconds to answer each question. You will get deducted 1 point for each second passed, so think fast! Press "Start Game" whenever you\'re ready!';
+  let startButton = document.createElement("button");
+  startButton.classList.add("start-button");
+  startButton.textContent = "Start Game";
+  startButton.addEventListener("click", startGame);
+
+  pregamePanel.appendChild(introduction);
+  pregamePanel.appendChild(gameRule);
+  pregamePanel.appendChild(startButton);
+  questionPanel.appendChild(pregamePanel);
+}
+
 // Start the game
-loadQuestion();
+// loadQuestion();
+window.addEventListener("load", addPreGamePanel);

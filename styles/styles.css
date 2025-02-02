@@ -87,27 +87,13 @@ h6 {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   flex: 1;
   display: flex;
-  justify-content: space-between;
-  & ul {
-    display: flex;
-    list-style: none;
-    width: 30%;
-    gap: 1.5rem;
-    padding: 0;
-    justify-content: space-evenly;
-    & li {
-      width: 11%;
-      border-radius: 50%;
-    }
-  }
-}
-
-.header > * {
-  margin: 0.8rem 2rem;
+  justify-content: center;
 }
 
 .header > h1 {
-  font-family: "Times New Roman", Times, serif;
+  font-family: "Courier New", Courier, monospace;
+  margin: 0.8rem 2rem;
+  font-weight: 900;
 }
 
 /* Body */
@@ -127,6 +113,7 @@ h6 {
 
 .question-panel {
   display: flex;
+  position: relative;
   background-color: rgb(244, 228, 206);
   border-radius: 8px;
   flex-direction: column;
@@ -156,30 +143,41 @@ h6 {
 }
 
 .option,
-.restart-button {
+.restart-button,
+.start-button {
   background-color: bisque;
   border-radius: 8px;
 }
 
-.restart-button {
+.restart-button,
+.start-button {
   width: 15%;
   font-size: 1.2rem;
   font-weight: 700;
 }
 
 .option:hover,
-.restart-button:hover {
+.restart-button:hover,
+.start-button:hover {
   cursor: pointer;
   transform: translateY(-5%) translateX(-2%);
-  box-shadow: 5px 6px 14px -5px rgba(0, 0, 0, 0.75);
+  box-shadow: 5px 6px 4px -5px rgba(0, 0, 0, 0.75);
   transition: all 0.1s;
 }
 
 .option:active,
-.restart-button:active {
+.restart-button:active,
+.start-button:active,
+.option:hover:disabled {
   transform: translateY(0%) translateX(0%);
   transition: all 0.1s;
   box-shadow: none;
+}
+
+.option:disabled {
+  border: 2px solid black;
+  border-radius: 8px;
+  color: black;
 }
 
 h2 {
@@ -206,4 +204,27 @@ h2 {
   border-radius: 8px;
   height: 100%;
   width: 100%;
+}
+
+.pregame-panel {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: rgb(244, 228, 206);
+  border-radius: 8px;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.pregame-panel .introduction {
+  border-bottom: 1px solid black;
+}
+
+.pregame-panel > p {
+  width: 70%;
+  text-align: center;
+  font-size: 1.2rem;
 }
