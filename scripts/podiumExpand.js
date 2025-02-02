@@ -1,13 +1,16 @@
 
 
 function expandPodium() {
-    let iframeElement = document.querySelector(".js-question-panel");
-    iframeElement.style.visibility = 'hidden';
-    iframeElement.style.display = 'none';
+    let questionPanelElement = parent.window.document.querySelector(".js-question-panel");
+    if (questionPanelElement) {
+        questionPanelElement.style.visibility = 'hidden';
+        questionPanelElement.style.display = 'none';
+    }
+    console.log('podium expanded!');
+    
     
 }
 let expandButtonElement = document.querySelector(".js-expand-button");
-// let expandButtonElement = iframeElement.contentWindow.document.querySelector(".js-expand-button");
-console.log(expandButtonElement);
-
-// expandPodium();
+if (expandButtonElement) {
+    expandButtonElement.addEventListener("click", expandPodium);
+}
