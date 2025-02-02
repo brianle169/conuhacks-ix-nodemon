@@ -1558,7 +1558,7 @@ function getQueryParam(param) {
 }
 
 function returnMainMenu() {
-  window.location.href = "homePage.html";
+  window.location.href = "index.html";
 }
 
 document.addEventListener("DOMContentLoaded", function () {
