@@ -1,29 +1,35 @@
-let player1 = { name: "player 1", score: "400" };
-let player2 = { name: "player 2", score: "200" };
-let player3 = { name: "player 3", score: "500" };
-let player4 = { name: "player 4", score: "300" };
-let player5 = { name: "player 5", score: "100" };
 
-let players = [];
+let scores = JSON.parse(localStorage.getItem('scores')) || [];
+let numberOfAttempts = 1;
+// let score1 = {name:"guest", score:"400", attemptNumber: 1, attemptDate: new Date(2025, 2, 1, 9, 56, 30, 0)};
+scores.push({name:"guest", score:"400", attemptNumber: 5, attemptDate: new Date(2025, 2, 1, 9, 56, 30, 0)});
+scores.push({name:"guest", score:"370", attemptNumber: 3, attemptDate: new Date(2025, 2, 1, 10, 31, 30, 0)});
+scores.push({name:"guest", score:"350", attemptNumber: 4, attemptDate: new Date(2025, 2, 1, 10, 31, 30, 0)});
+scores.push({name:"guest", score:"330", attemptNumber: 1, attemptDate: new Date(2025, 2, 1, 10, 31, 30, 0)});
+scores.push({name:"guest", score:"300", attemptNumber: 2, attemptDate: new Date(2025, 2, 1, 10, 31, 30, 0)});
 
-players.push(player1);
-players.push(player2);
-players.push(player3);
-players.push(player4);
-players.push(player5);
 
-console.log(players);
-
-players = sortPlayersByScore(players);
+// console.log(scores);
 
 // Get the ordered list by ID
 let rankingList = document.getElementById("player-ranking-list");
 
-// Loop through the players and add them to the list
-players.forEach((player) => {
-  let listItem = document.createElement("li");
-  listItem.textContent = `${player.name} (${player.score} points)`;
-  rankingList.appendChild(listItem);
+// Loop through the scores and add them to the list
+scores.forEach(item => {
+    let listItem = document.createElement("li");
+    // listItem.textContent = `${item.name} - ${item.score} points - ${item.attemptDate} - attempt #${item.attemptNumber}`;
+    listItem.innerHTML = 
+    `<table class="score-data">
+        <tr>
+            <td>${item.name}</td>
+            <td>${item.score} points</td>
+            <!--
+            <td>${item.attemptDate}</td>
+            <td>attempt #${item.attemptNumber}</td>
+            -->
+        </tr>
+    </table>`;
+    rankingList.appendChild(listItem);
 });
 
 /**
@@ -31,5 +37,5 @@ players.forEach((player) => {
  * @param {Array} playersArray - The array of player objects.
  */
 function sortPlayersByScore(playersArray) {
-  return playersArray.sort((a, b) => b.score - a.score);
+    return playersArray.sort((a, b) => b.score - a.score);
 }
