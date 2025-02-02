@@ -55,7 +55,7 @@ body {
 .logo-title h1 {
   font-size: 2rem;
   color: black;
-  font-family: 'Times New Roman', serif;
+  font-family: "Times New Roman", serif;
   margin: 0;
 }
 
@@ -247,6 +247,15 @@ body {
   object-fit: contain;
 }
 
+.image-gallery button {
+  background-color: transparent;
+  border: transparent;
+}
+
+.image-gallery button:hover {
+  cursor: pointer;
+}
+
 .image-gallery img:hover {
   transform: scale(1.05);
 }
@@ -256,7 +265,9 @@ body {
 ********************/
 @media (max-width: 767px) {
   .main-container {
-    min-height: calc(100vh - var(--header-height) - var(--footer-height) - 2rem);
+    min-height: calc(
+      100vh - var(--header-height) - var(--footer-height) - 2rem
+    );
   }
 
   .sidebar {
@@ -310,7 +321,6 @@ body {
 .home-btn {
   margin-top: 40px;
 }
-
 
 .learning-path {
   display: flex;
