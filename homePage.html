@@ -30,9 +30,9 @@
 
       <!-- Sidebar -->
       <nav id="mySidebar" class="sidebar">
-        <a href="#" class="home-btn">Home</a>
+        <a href="homePage.html" class="home-btn">Home</a>
+        <a href="learning_path.html">Learning Path</a>
         <a href="#">About</a>
-        <a href="#">Services</a>
         <a href="#">Contact</a>
       </nav>
 
@@ -41,7 +41,7 @@
         <h2 style="color: white;">.</h2>
 
         <h2>Welcome to Katrivia</h2>
-        <p>Choose programming language you want to learn.</p>
+        <p>Choose programming language you want to practice your knowledge.</p>
 
         <!-- Image Gallery -->
         <div class="image-gallery">
@@ -118,14 +118,6 @@
       }
     }
 
-    function updateHeights() {
-      const headerHeight = document.querySelector('.header').offsetHeight;
-      const footerHeight = document.querySelector('.footer').offsetHeight;
-      document.documentElement.style.setProperty('--header-height', `${headerHeight}px`);
-      document.documentElement.style.setProperty('--footer-height', `${footerHeight}px`);
-    }
-
-    // Modal functionality
     const modal = document.getElementById('authModal');
     const loginBtn = document.querySelector('.login-btn');
     const signupBtn = document.querySelector('.signup-btn');
@@ -150,9 +142,6 @@
       if (e.target === modal) closeModal();
     });
 
-    // Initialize heights
-    window.addEventListener('load', updateHeights);
-    window.addEventListener('resize', updateHeights);
   </script>
 </body>
 
