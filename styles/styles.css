@@ -2,6 +2,7 @@
 
 html {
   font-size: 16px;
+  font-family: "Courier New", Courier, monospace;
 }
 
 /* 1. Use a more-intuitive box-sizing model */
@@ -23,7 +24,7 @@ body {
   margin: 1rem;
   /* 4. Improve text rendering */
   -webkit-font-smoothing: antialiased;
-  font-family: Arial, sans-serif;
+  /* font-family: Arial, sans-serif; */
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -84,7 +85,7 @@ h6 {
 /* Header */
 .header {
   background-color: rgb(248, 242, 234);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.307);
   flex: 1;
   display: flex;
   justify-content: center;
@@ -115,6 +116,7 @@ h6 {
   display: flex;
   position: relative;
   background-color: rgb(244, 228, 206);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.307);
   border-radius: 8px;
   flex-direction: column;
   justify-content: center;
@@ -184,7 +186,7 @@ h6 {
 .start-button:hover {
   cursor: pointer;
   transform: translateY(-5%) translateX(-2%);
-  box-shadow: 5px 6px 4px -5px rgba(0, 0, 0, 0.75);
+  box-shadow: 5px 6px 4px -5px rgba(0, 0, 0, 0.307);
   transition: all 0.1s;
 }
 

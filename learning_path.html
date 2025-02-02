@@ -1,223 +1,299 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Katrivia</title>
-    <link rel="stylesheet" href="styles/homePage.css">
-</head>
+    <link rel="stylesheet" href="styles/homePage.css" />
+  </head>
 
-<body>
+  <body>
     <div class="container">
-        <!-- Header -->
-        <header class="header">
-            <div class="logo-title">
-                <a href="homePage.html">
-                    <img src="images/small logo.png " alt="Katrivia" width="70" height="70">
-                </a>
-                <h1>Katrivia</h1>
-            </div>
-            <div class="auth-buttons">
-                <button class="btn login-btn">Login</button>
-                <button class="btn signup-btn">Sign Up</button>
-            </div>
-        </header>
-
-        <!-- Main Content -->
-        <main class="main-container">
-            <button class="openbtn" onclick="toggleSidebar()">☰</button>
-
-            <!-- Sidebar -->
-            <nav id="mySidebar" class="sidebar">
-                <a href="homePage.html" class="home-btn">Home</a>
-                <a href="learning_path.html">Learning Path</a>
-                <a href="#">About</a>
-                <a href="#">Contact</a>
-            </nav>
-
-            <!-- Content Area -->
-            <div class="main-content">
-                <h2 style="color: white;">.</h2>
-
-                <h2>Welcome to Katrivia</h2>
-                <p>Choose programming language you want to learn.</p>
-
-
-                <div class="learning-path">
-                    <img src="images/java.png" alt="Java" width="50" height="50" class="learning-path-img">
-                    <div class="learning-path-text">
-                        <h3>Java</h3>
-                        <p>Learn Java, a powerful language used in enterprise applications, Android development, and
-                            more.</p>
-                        <a href="https://roadmap.sh/java" class="btn">Explore Java Path</a>
-                    </div>
-                </div>
-
-                <div class="learning-path">
-                    <img src="images/javascript.png" alt="JavaScript" width="50" height="50" class="learning-path-img">
-                    <div class="learning-path-text">
-                        <h3>JavaScript</h3>
-                        <p>Master JavaScript, the essential language for web development, both front-end and back-end.
-                        </p>
-                        <a href="https://roadmap.sh/javascript" class="btn">Explore JavaScript Path</a>
-                    </div>
-                </div>
-
-                <div class="learning-path">
-                    <img src="images/go.png" alt="Go (Golang)" width="50" height="50" class="learning-path-img">
-                    <div class="learning-path-text">
-                        <h3>Go (Golang)</h3>
-                        <p>Get started with Go, a statically typed language great for cloud computing, microservices,
-                            and high-performance applications.</p>
-                        <a href="https://roadmap.sh/golang" class="btn">Explore Go Path</a>
-                    </div>
-                </div>
-
-                <div class="learning-path">
-                    <img src="images/php.png" alt="PHP" width="50" height="50" class="learning-path-img">
-                    <div class="learning-path-text">
-                        <h3>PHP</h3>
-                        <p>PHP is a server-side scripting language used for web development. Learn how to build dynamic
-                            websites and web apps.</p>
-                        <a href="https://roadmap.sh/php" class="btn">Explore PHP Path</a>
-                    </div>
-                </div>
-
-                <div class="learning-path">
-                    <img src="images/python.png" alt="Python" width="50" height="50" class="learning-path-img">
-                    <div class="learning-path-text">
-                        <h3>Python</h3>
-                        <p>Start learning Python, a versatile and beginner-friendly language widely used in web
-                            development, data science, and automation.</p>
-                        <a href="https://roadmap.sh/python" class="btn">Explore Python Path</a>
-                    </div>
-                </div>
-
-                <div class="learning-path">
-                    <img src="images/c.png" alt="C" width="50" height="50" class="learning-path-img">
-                    <div class="learning-path-text">
-                        <h3>C</h3>
-                        <p>C is a foundational language used for system programming, embedded systems, and operating
-                            systems.</p>
-                        <a href="https://www.geeksforgeeks.org/c-programming-for-beginners-a-20-day-curriculum/"
-                            class="btn">Explore C Path</a>
-                    </div>
-                </div>
-
-                <div class="learning-path">
-                    <img src="images/csharp.png" alt="C#" width="50" height="50" class="learning-path-img">
-                    <div class="learning-path-text">
-                        <h3>C#</h3>
-                        <p>C# is widely used for game development (Unity), enterprise applications, and web services.
-                        </p>
-                        <a href="https://learn.microsoft.com/en-us/training/paths/get-started-c-sharp-part-1/"
-                            class="btn">Explore C# Path</a>
-                    </div>
-                </div>
-
-                <div class="learning-path">
-                    <img src="images/c++.png" alt="C++" width="50" height="50" class="learning-path-img">
-                    <div class="learning-path-text">
-                        <h3>C++</h3>
-                        <p>C++ is perfect for high-performance applications, game development, and systems programming.
-                        </p>
-                        <a href="https://roadmap.sh/cpp" class="btn">Explore C++ Path</a>
-                    </div>
-                </div>
-
-
-
-
-            </div>
-        </main>
-
-        <!-- Footer -->
-        <footer class="footer">
-            <p>© 2025 Katrivia. All rights reserved.</p>
-        </footer>
-
-        <!-- Auth Modal -->
-        <div id="authModal" class="modal">
-            <div class="modal-content">
-                <span class="close">&times;</span>
-                <div class="auth-form" id="loginForm">
-                    <h2>Login</h2>
-                    <form>
-                        <div class="form-group">
-                            <label for="loginEmail">Email:</label>
-                            <input type="email" id="loginEmail" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="loginPassword">Password:</label>
-                            <input type="password" id="loginPassword" required>
-                        </div>
-                        <button type="submit">Login</button>
-                    </form>
-                </div>
-                <div class="auth-form" id="signupForm">
-                    <h2>Sign Up</h2>
-                    <form>
-                        <div class="form-group">
-                            <label for="signupEmail">Email:</label>
-                            <input type="email" id="signupEmail" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="signupPassword">Password:</label>
-                            <input type="password" id="signupPassword" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="confirmPassword">Confirm Password:</label>
-                            <input type="password" id="confirmPassword" required>
-                        </div>
-                        <button type="submit">Sign Up</button>
-                    </form>
-                </div>
-            </div>
+      <!-- Header -->
+      <header class="header">
+        <div class="logo-title">
+          <a href="homePage.html">
+            <img
+              src="images/small logo.png "
+              alt="Katrivia"
+              width="70"
+              height="70"
+            />
+          </a>
+          <h1>Katrivia</h1>
         </div>
+        <div class="auth-buttons">
+          <button class="btn login-btn">Login</button>
+          <button class="btn signup-btn">Sign Up</button>
+        </div>
+      </header>
+
+      <!-- Main Content -->
+      <main class="main-container">
+        <button class="openbtn" onclick="toggleSidebar()">☰</button>
+
+        <!-- Sidebar -->
+        <nav id="mySidebar" class="sidebar">
+          <a href="homePage.html" class="home-btn">Home</a>
+          <a href="learning_path.html">Learning Path</a>
+          <a href="#">About</a>
+          <a href="#">Contact</a>
+        </nav>
+
+        <!-- Content Area -->
+        <div class="main-content">
+          <h2 style="color: white">.</h2>
+
+          <h2>Welcome to Katrivia</h2>
+          <p>Choose a programming language you want to learn.</p>
+
+          <div class="learning-path">
+            <img
+              src="images/java.png"
+              alt="Java"
+              width="50"
+              height="50"
+              class="learning-path-img"
+            />
+            <div class="learning-path-text">
+              <h3>Java</h3>
+              <p>
+                Learn Java, a powerful language used in enterprise applications,
+                Android development, and more.
+              </p>
+              <a href="https://roadmap.sh/java" class="btn"
+                >Explore Java Path</a
+              >
+            </div>
+          </div>
+
+          <div class="learning-path">
+            <img
+              src="images/javascript.png"
+              alt="JavaScript"
+              width="50"
+              height="50"
+              class="learning-path-img"
+            />
+            <div class="learning-path-text">
+              <h3>JavaScript</h3>
+              <p>
+                Master JavaScript, the essential language for web development,
+                both front-end and back-end.
+              </p>
+              <a href="https://roadmap.sh/javascript" class="btn"
+                >Explore JavaScript Path</a
+              >
+            </div>
+          </div>
+
+          <div class="learning-path">
+            <img
+              src="images/go.png"
+              alt="Go (Golang)"
+              width="50"
+              height="50"
+              class="learning-path-img"
+            />
+            <div class="learning-path-text">
+              <h3>Go (Golang)</h3>
+              <p>
+                Get started with Go, a statically typed language great for cloud
+                computing, microservices, and high-performance applications.
+              </p>
+              <a href="https://roadmap.sh/golang" class="btn"
+                >Explore Go Path</a
+              >
+            </div>
+          </div>
+
+          <div class="learning-path">
+            <img
+              src="images/php.png"
+              alt="PHP"
+              width="50"
+              height="50"
+              class="learning-path-img"
+            />
+            <div class="learning-path-text">
+              <h3>PHP</h3>
+              <p>
+                PHP is a server-side scripting language used for web
+                development. Learn how to build dynamic websites and web apps.
+              </p>
+              <a href="https://roadmap.sh/php" class="btn">Explore PHP Path</a>
+            </div>
+          </div>
+
+          <div class="learning-path">
+            <img
+              src="images/python.png"
+              alt="Python"
+              width="50"
+              height="50"
+              class="learning-path-img"
+            />
+            <div class="learning-path-text">
+              <h3>Python</h3>
+              <p>
+                Start learning Python, a versatile and beginner-friendly
+                language widely used in web development, data science, and
+                automation.
+              </p>
+              <a href="https://roadmap.sh/python" class="btn"
+                >Explore Python Path</a
+              >
+            </div>
+          </div>
+
+          <div class="learning-path">
+            <img
+              src="images/c.png"
+              alt="C"
+              width="50"
+              height="50"
+              class="learning-path-img"
+            />
+            <div class="learning-path-text">
+              <h3>C</h3>
+              <p>
+                C is a foundational language used for system programming,
+                embedded systems, and operating systems.
+              </p>
+              <a
+                href="https://www.geeksforgeeks.org/c-programming-for-beginners-a-20-day-curriculum/"
+                class="btn"
+                >Explore C Path</a
+              >
+            </div>
+          </div>
+
+          <div class="learning-path">
+            <img
+              src="images/cSharp.png"
+              alt="C#"
+              width="50"
+              height="50"
+              class="learning-path-img"
+            />
+            <div class="learning-path-text">
+              <h3>C#</h3>
+              <p>
+                C# is widely used for game development (Unity), enterprise
+                applications, and web services.
+              </p>
+              <a
+                href="https://learn.microsoft.com/en-us/training/paths/get-started-c-sharp-part-1/"
+                class="btn"
+                >Explore C# Path</a
+              >
+            </div>
+          </div>
+
+          <div class="learning-path">
+            <img
+              src="images/c++.png"
+              alt="C++"
+              width="50"
+              height="50"
+              class="learning-path-img"
+            />
+            <div class="learning-path-text">
+              <h3>C++</h3>
+              <p>
+                C++ is perfect for high-performance applications, game
+                development, and systems programming.
+              </p>
+              <a href="https://roadmap.sh/cpp" class="btn">Explore C++ Path</a>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <p>© 2025 Katrivia. All rights reserved.</p>
+      </footer>
+
+      <!-- Auth Modal -->
+      <div id="authModal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <div class="auth-form" id="loginForm">
+            <h2>Login</h2>
+            <form>
+              <div class="form-group">
+                <label for="loginEmail">Email:</label>
+                <input type="email" id="loginEmail" required />
+              </div>
+              <div class="form-group">
+                <label for="loginPassword">Password:</label>
+                <input type="password" id="loginPassword" required />
+              </div>
+              <button type="submit">Login</button>
+            </form>
+          </div>
+          <div class="auth-form" id="signupForm">
+            <h2>Sign Up</h2>
+            <form>
+              <div class="form-group">
+                <label for="signupEmail">Email:</label>
+                <input type="email" id="signupEmail" required />
+              </div>
+              <div class="form-group">
+                <label for="signupPassword">Password:</label>
+                <input type="password" id="signupPassword" required />
+              </div>
+              <div class="form-group">
+                <label for="confirmPassword">Confirm Password:</label>
+                <input type="password" id="confirmPassword" required />
+              </div>
+              <button type="submit">Sign Up</button>
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
 
     <script>
-        // Sidebar Toggle Function
-        function toggleSidebar() {
-            const sidebar = document.getElementById("mySidebar");
-            const mainContainer = document.querySelector(".main-container");
-            const isOpen = sidebar.classList.contains("open");
+      // Sidebar Toggle Function
+      function toggleSidebar() {
+        const sidebar = document.getElementById("mySidebar");
+        const mainContainer = document.querySelector(".main-container");
+        const isOpen = sidebar.classList.contains("open");
 
-            if (isOpen) {
-                sidebar.classList.remove("open");
-                mainContainer.style.gridTemplateColumns = "0 1fr";
-            } else {
-                sidebar.classList.add("open");
-                mainContainer.style.gridTemplateColumns = "250px 1fr";
-            }
+        if (isOpen) {
+          sidebar.classList.remove("open");
+          mainContainer.style.gridTemplateColumns = "0 1fr";
+        } else {
+          sidebar.classList.add("open");
+          mainContainer.style.gridTemplateColumns = "250px 1fr";
         }
+      }
 
-        const modal = document.getElementById('authModal');
-        const loginBtn = document.querySelector('.login-btn');
-        const signupBtn = document.querySelector('.signup-btn');
-        const closeBtn = document.querySelector('.close');
+      const modal = document.getElementById("authModal");
+      const loginBtn = document.querySelector(".login-btn");
+      const signupBtn = document.querySelector(".signup-btn");
+      const closeBtn = document.querySelector(".close");
 
-        function openModal(formType) {
-            document.getElementById('loginForm').classList.remove('active');
-            document.getElementById('signupForm').classList.remove('active');
-            document.getElementById(`${formType}Form`).classList.add('active');
-            modal.style.display = 'block';
-        }
+      function openModal(formType) {
+        document.getElementById("loginForm").classList.remove("active");
+        document.getElementById("signupForm").classList.remove("active");
+        document.getElementById(`${formType}Form`).classList.add("active");
+        modal.style.display = "block";
+      }
 
-        function closeModal() {
-            modal.style.display = 'none';
-        }
+      function closeModal() {
+        modal.style.display = "none";
+      }
 
-        loginBtn.addEventListener('click', () => openModal('login'));
-        signupBtn.addEventListener('click', () => openModal('signup'));
-        closeBtn.addEventListener('click', closeModal);
+      loginBtn.addEventListener("click", () => openModal("login"));
+      signupBtn.addEventListener("click", () => openModal("signup"));
+      closeBtn.addEventListener("click", closeModal);
 
-        window.addEventListener('click', (e) => {
-            if (e.target === modal) closeModal();
-        });
-
+      window.addEventListener("click", (e) => {
+        if (e.target === modal) closeModal();
+      });
     </script>
-</body>
-
+  </body>
 </html>
