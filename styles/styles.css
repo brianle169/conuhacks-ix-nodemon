@@ -210,12 +210,14 @@ h2 {
 }
 
 .footer {
-  background-color: rgb(248, 242, 234);
-  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+  background: black;
   border-radius: 8px;
-  flex: 1;
-  display: flex;
-  justify-content: center;
+  padding: 1rem;
+  color: white;
+  text-align: center;
+  /* position: sticky; */
+  bottom: 0;
+  z-index: 1000;
 }
 
 .podium {
