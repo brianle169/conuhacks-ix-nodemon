@@ -218,9 +218,10 @@ let timer;
 const questionText = document.querySelector(".question");
 const optionButtons = document.querySelectorAll(".option");
 const timerDisplay = document.querySelector(".timer-display");
-const scoreDisplay = document.querySelector(".score-display");
+// const scoreDisplay = document.querySelector(".score-display");
 const questionPanel = document.querySelector(".question-panel");
 const optionPanel = document.querySelector(".option-panel");
+const timeScoreDisplay = document.querySelector(".time-score-display");
 
 function resetButtons() {
   optionButtons.forEach((button) => {
@@ -232,7 +233,7 @@ function resetButtons() {
 // Function to load a question
 function loadQuestion() {
   resetButtons();
-  scoreDisplay.textContent = `Current Score - ${score}`;
+  //   scoreDisplay.textContent = `Current Score - ${score}`;
   if (currentQuestionIndex < questionArr.length) {
     const q = questionArr[currentQuestionIndex];
     questionText.textContent = `Q${currentQuestionIndex + 1}: ` + q.question;
@@ -248,8 +249,7 @@ function loadQuestion() {
       questionArr.length * 20
     }.`;
     optionPanel.style.display = "none"; // Hide buttons
-    timerDisplay.textContent = "";
-    scoreDisplay.textContent = "";
+    timeScoreDisplay.style.display = "none";
     // Add a restart button
     let restartButton = document.createElement("button");
     restartButton.textContent = "Restart";
@@ -272,11 +272,11 @@ function restart(event) {
 function resetTimer() {
   clearInterval(timer);
   timeLeft = 15;
-  timerDisplay.textContent = `Time left: ${timeLeft}s`;
+  timerDisplay.textContent = `Time left - ${timeLeft}s`;
 
   timer = setInterval(() => {
     timeLeft--;
-    timerDisplay.textContent = `Time left: ${timeLeft}s`;
+    timerDisplay.textContent = `Time left - ${timeLeft}s`;
 
     if (timeLeft <= 0) {
       clearInterval(timer);
@@ -302,7 +302,7 @@ function checkAnswer(selectedAnswer, button) {
   }
 
   currentQuestionIndex++;
-  setTimeout(loadQuestion, 500); // Move to the next question after a short delay
+  setTimeout(loadQuestion, 200); // Move to the next question after a short delay
 }
 
 // Function to handle answer selection
