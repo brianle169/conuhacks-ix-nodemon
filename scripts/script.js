@@ -665,6 +665,14 @@ const cQuestions = [
     ".ch",
     "B"
   ),
+  new Question(
+    "Which operator is used to access the value at a memory address in C?",
+    "*",
+    "&",
+    "->",
+    "%",
+    "A"
+  ),
 ];
 
 const csharpQuestions = [
@@ -819,6 +827,14 @@ const csharpQuestions = [
     "delegate",
     "anonymous",
     "C"
+  ),
+  new Question(
+    "Which keyword is used to define a property in C#?",
+    "prop",
+    "property",
+    "getset",
+    "get; set;",
+    "D"
   ),
 ];
 
