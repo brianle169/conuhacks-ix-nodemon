@@ -265,6 +265,7 @@ function restart(event) {
   timeLeft = 15;
   optionPanel.style.display = "flex";
   event.target.style.display = "none";
+  timeScoreDisplay.style.display = "flex";
   loadQuestion();
 }
 
