@@ -1,6 +1,10 @@
-if (!scores) {
-    let scores = JSON.parse(localStorage.getItem('scores')) || [];
-}
+// try {
+//     let scores = JSON.parse(localStorage.getItem('scores')) || [];
+// } catch (error) {
+//     console.log(error);
+    
+// }
+
 
 function updateScores() {
     // Get the ordered list by ID

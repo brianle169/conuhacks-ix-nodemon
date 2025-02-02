@@ -3,6 +3,7 @@
 }
 body{
     margin: 0;
+    font-family: 'Courier New', Courier, monospace;
 }
 .podium-flex-container{
     display: flex;
@@ -20,6 +21,9 @@ body{
     text-align: center;
 }
 .podium-content {
+    display: flex;
+    justify-content: center;
+
     flex-grow: 1;
     overflow-y: auto;
     max-height: calc(100vh - 100px); /* Adjust 100px based on title height */
@@ -27,6 +31,9 @@ body{
 
 #player-ranking-list{
     padding-left: 10px;
+}
+#player-ranking-list li{
+    list-style: none;
 }
 /* #player-ranking-list li{
     list-style: none;
@@ -49,15 +56,41 @@ body{
     border-radius: 1000px;
 }
 .score-data td{
-    border: 10px groove rgb(224, 208, 186);
+    border: 5px solid rgb(224, 208, 186);
     padding: 5px 20px;
 }
 
 .score-data tr:hover td{
-    border: 10px ridge rgb(224, 208, 186);
+    border: 5px groove rgb(224, 208, 186);
 }
 
-.podium-bottom-buttons{
+li:nth-of-type(odd) tr{
+    background-color: rgb(254, 238, 226);
+    
+    /* padding: 5px 20px; */
+}
+
+
+/* .podium-bottom-buttons{
     bottom: 0;
     height: 30px;
+} */
+
+.expand-button{
+    position: absolute;
+    padding: 30px 10px;
+    bottom: 40px;
+    right: 10px;
+    border: none;
+    background-color: rgb(224, 208, 186);
+    font-weight: bolder;
+    font-size: 30pt;
+    font-stretch: ultra-condensed;
+}
+.expand-button:hover {
+    cursor: pointer;
+    background-color: rgb(214, 198, 176);
+}
+iframe{
+    border: none;
 }
