@@ -310,3 +310,32 @@ body {
 .home-btn {
   margin-top: 40px;
 }
+
+
+.learning-path {
+  display: flex;
+  align-items: center;
+  /* Vertically center the items */
+  gap: 15px;
+  /* Adds space between the image and text */
+  margin-bottom: 20px;
+}
+
+.learning-path-img {
+  max-width: 100%;
+  height: auto;
+}
+
+.learning-path-text {
+  flex-grow: 1;
+  /* Ensures the text part takes available space */
+}
+
+.learning-path h3 {
+  margin: 0;
+  padding: 0;
+}
+
+.learning-path p {
+  margin: 5px 0;
+}
