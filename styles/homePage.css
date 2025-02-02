@@ -1,17 +1,4 @@
 /********************
-  Global Reset & Variables
-********************/
-#root,
-#__next {
-  isolation: isolate;
-}
-
-:root {
-  --header-height: 40px;
-  --footer-height: 80px;
-}
-
-/********************
   Base Styles
 ********************/
 body {
@@ -63,7 +50,6 @@ body {
   display: flex;
   align-items: center;
   gap: 1rem;
-  padding-left: 3rem;
 }
 
 .logo-title h1 {
